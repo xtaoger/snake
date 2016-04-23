@@ -1,8 +1,8 @@
 #include<stdio.h>
-#include<stdlib.h>  //system,rand,sand
-#include<conio.h>   //kbhit
-#include<windows.h> //sleep
-#include<time.h>    //time
+#include<stdlib.h>
+#include<conio.h>
+#include<windows.h>
+#include<time.h>
 
 #define H 16
 #define L 16
