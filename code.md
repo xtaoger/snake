@@ -30,10 +30,9 @@ int _speed( void );            //难度
 int main()
 {
     int speed = _speed();
+	char direction = right, dir;
     _initialize();
-    int i;
     getch();
-    char direction = right, dir;
     while( 1 )
     {
         dir = _key();
@@ -61,8 +60,8 @@ void _initialize( void )
     /*
     **  地图初始化为“ ”
     */
+	int i, j, cx;
     system("title SNAKE");
-    int i, j, cx;
     for(i = 0; i < H; i++)
         for(j = 0; j < L; j++)
             map[i][j] = ' ';
@@ -143,9 +142,9 @@ int _death( void )
     /*
     **  撞墙与撞尾
     */
+	int i;
     if((snake[0]/100>=H)|(snake[0]/100<0)|(snake[0]%100>=L)|(snake[0]%100<0))
         return 1;
-    int i;
     for(i = 1; i < length; i++)
         if(snake[i] == snake[0])
             return 1;
@@ -154,8 +153,8 @@ int _death( void )
 }
 void _food( void )
 {
+	int i, test = 1;
     srand( (unsigned) time(0) );
-    int i, test = 1;
     /*
     **  产生食物，但得避开蛇体
     */
