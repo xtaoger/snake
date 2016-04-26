@@ -143,7 +143,7 @@ int _death( void )
     **  撞墙与撞尾
     */
 	int i;
-    if((snake[0]/100>=H)|(snake[0]/100<0)|(snake[0]%100>=L)|(snake[0]%100<0))
+    if((snake[0]/100>=H)||(snake[0]/100<0)||(snake[0]%100>=L)||(snake[0]%100<0))
         return 1;
     for(i = 1; i < length; i++)
         if(snake[i] == snake[0])
