@@ -127,15 +127,17 @@ char _key( void )
 {
     char direction;
     if( kbhit() )
-        direction = getch();
-    switch ( direction )
     {
-        case 'w' : return up; break;
-        case 's' : return down;break;
-        case 'a' : return left;break;
-        case 'd' : return right;break;
-        default  : return holdon;
-    }
+        direction = getch();
+	switch ( direction )
+	    {
+	        case 'w' : return up; break;
+	        case 's' : return down;break;
+	        case 'a' : return left;break;
+	        case 'd' : return right;break;
+	        default  : return holdon;
+	    }
+     }
 }
 int _death( void )
 {
