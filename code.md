@@ -1,16 +1,16 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<conio.h>
-#include<windows.h>
-#include<time.h>
+#include<stdlib.h>  //system,rand,sand
+#include<conio.h>   //kbhit
+#include<windows.h> //sleep
+#include<time.h>    //time
 
 #define H 16
 #define L 16
-#define up      0
-#define down    1
-#define left    2
-#define right   3
-#define holdon  4
+#define up      1
+#define down    2
+#define left    3
+#define right   4
+#define holdon  5
 
 int length ;        //蛇长
 int food;           //食物位置
@@ -33,6 +33,7 @@ int main()
 	char direction = right, dir;
     _initialize();
     getch();
+    direction = right;
     while( 1 )
     {
         dir = _key();
@@ -129,15 +130,17 @@ char _key( void )
     if( kbhit() )
     {
         direction = getch();
-	switch ( direction )
-	    {
-	        case 'w' : return up; break;
-	        case 's' : return down;break;
-	        case 'a' : return left;break;
-	        case 'd' : return right;break;
-	        default  : return holdon;
-	    }
-     }
+        switch ( direction )
+        {
+            case 'w' : return up; break;
+            case 's' : return down;break;
+            case 'a' : return left;break;
+            case 'd' : return right;break;
+            default  : return holdon;
+        }
+    }
+    else
+        return holdon;
 }
 int _death( void )
 {
